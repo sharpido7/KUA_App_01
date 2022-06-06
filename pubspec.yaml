@@ -40,11 +40,18 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  firebase_core: ^1.17.0
-  shared_preferences: ^2.0.5
-  firebase_auth: ^3.3.18
-  fluttertoast: ^8.0.9
-  cloud_firestore: ^3.1.15 
+  #firebase_core: ^1.17.0
+  #shared_preferences: ^2.0.5
+  #firebase_auth: ^3.3.18
+  #fluttertoast: ^8.0.9
+  #cloud_firestore: ^3.1.15
+  firebase_core: 
+  shared_preferences: 
+  firebase_auth: 
+  fluttertoast: 
+  cloud_firestore: 
+  chewie:
+  video_player: 
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
