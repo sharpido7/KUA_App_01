@@ -23,7 +23,18 @@ class HomeScreenWidget extends StatefulWidget {
 class _HomeScreenWidgetState extends State<HomeScreenWidget> {
   int _selectedIndex = 0;
 
+  /*void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+  */
+
   void _onItemTapped(int index) {
+    print(index);
+    if (index == 2) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+    }
     setState(() {
       _selectedIndex = index;
     });
