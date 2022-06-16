@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'list.dart';
 import 'package:kua_app_01/lesson_page.dart';
+import 'package:kua_app_01/profile_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -23,7 +24,18 @@ class HomeScreenWidget extends StatefulWidget {
 class _HomeScreenWidgetState extends State<HomeScreenWidget> {
   int _selectedIndex = 0;
 
+  /*void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+  */
+
   void _onItemTapped(int index) {
+    print(index);
+    if (index == 2) {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+    }
     setState(() {
       _selectedIndex = index;
     });
