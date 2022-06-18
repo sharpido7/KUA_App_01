@@ -4,6 +4,7 @@ import 'package:kua_app_01/course.dart';
 import 'package:kua_app_01/otp_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:kua_app_01/new_homepage.dart';
 
  
 
@@ -374,7 +375,7 @@ class _RegistrationState extends State<Registration> {
            // }
 
                      Navigator.of(context).push(
-                 MaterialPageRoute(builder: (context)=>Coursepage())
+                 MaterialPageRoute(builder: (context)=>Home())
                );
 
 
