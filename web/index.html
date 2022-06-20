@@ -100,5 +100,32 @@
       loadMainDartJs();
     }
   </script>
+  
+  
+  // Added the following lines of code to help app run on web emulator
+  // Beginning
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-analytics.js"></script>
+
+<script>
+
+var firebaseConfig = {
+    apiKey: "AIzaSyBKjP0hJysdLLL1q9PNHWLrR6BbPpV6Wpk",
+    authDomain: "kua-app.firebaseapp.com",
+    databaseURL: "https://kua-app-default-rtdb.firebaseio.com",
+    projectId: "kua-app",
+    storageBucket: "kua-app.appspot.com",
+    messagingSenderId: "999283542370",
+    appId: "1:999283542370:web:b55c831157e6fc331f843b",
+    measurementId: "G-16GY8C5FCQ"
+  };
+
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+</script>
+ 
+// End
+  
 </body>
 </html>
