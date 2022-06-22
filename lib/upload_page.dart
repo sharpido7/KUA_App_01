@@ -100,11 +100,19 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }));
             }
-            if (snapshot.connectionState == ConnectionState.waiting || snapshot.hasData) {
+            if (snapshot.connectionState == ConnectionState.waiting /*|| snapshot.hasData*/) {
               return CircularProgressIndicator();
             }
             return Container(
-              child: Text('Hi'),
+              child: Text(
+                'Waiting for connection',
+                style: TextStyle(
+                  fontFamily: 'WaterBrush',
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             );
           },
         )
