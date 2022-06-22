@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     var storage = FirebaseStorage.instance;
     return MaterialApp(
       home: Scaffold(
-        Container(
+        body: Container(
           child: Column(
             children: <Widget>[
               GridView.builder(
