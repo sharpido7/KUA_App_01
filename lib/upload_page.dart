@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> {
             }
             return Container(
               child: Text(
-                'Waiting for connection',
+                'Snapshot has data',
                 style: TextStyle(
                   fontFamily: 'WaterBrush',
                   fontSize: 22.0,
