@@ -136,6 +136,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       });
                     });
               }),
+              ElevatedButton(
+                child: Text("Get Images"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondPage()),
+                  );
+                },
+              ),
             ],
           ),
         ),
