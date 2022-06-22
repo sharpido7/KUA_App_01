@@ -100,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       }));
             }
-            if (snapshot.connectionState == ConnectionState.waiting /*|| snapshot.hasData*/) {
+            if (/*snapshot.connectionState == ConnectionState.waiting || */ snapshot.hasData) {
               return CircularProgressIndicator();
             }
             return Container(
