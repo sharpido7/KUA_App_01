@@ -18,6 +18,7 @@ Widget theTiles(String title, IconData icon) {
             //subtitle: Text(sub, style: TextStyle(fontSize: 20.0, color: Colors.white)),
             tileColor: Color.fromARGB(255, 36, 36, 36),
             onTap: () {
+              //Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
               final Uri _emailLaunchUri = Uri(
                   // scheme: thescheme,
                   //path: sub,
@@ -71,6 +72,7 @@ class _ProfilePageState extends State<ProfilePage> {
               theTiles('Account', Icons.account_circle),
               theTiles('Saved Lessons', Icons.bookmark),
               theTiles('Downloaded Lessons', Icons.done),
+              theTiles('Upload', Icons.done),
             ])));
   }
 }
