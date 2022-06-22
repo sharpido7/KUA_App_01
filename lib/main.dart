@@ -11,7 +11,7 @@ import 'package:kua_app_01/upload_page.dart';
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const UploadPage());
+  runApp(UploadPage());
 }
 
 class MyApp extends StatelessWidget {
