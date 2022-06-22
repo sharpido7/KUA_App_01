@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void getImages() {
     listOfImage = [];
     for (int i = 0; i < 6; i++) {
-      listOfImage.add(AssetImage('assets/images/avatar' + i.toString() + '.jpg'));
+      listOfImage.add(AssetImage('images/avatar' + i.toString() + '.jpg'));
     }
   }
 
