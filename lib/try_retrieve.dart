@@ -21,10 +21,6 @@ class _SecondPageState extends State<SecondPage> {
   Widget build(BuildContext context) {
     return MaterialApp(home: Appy());
   }
-
-  Future<QuerySnapshot<Map<String, dynamic>>> getImages() {
-    return fb.collection("images").get();
-  }
 }
 
 class Appy extends StatefulWidget {
@@ -33,6 +29,7 @@ class Appy extends StatefulWidget {
 }
 
 class _AppyState extends State<Appy> {
+  final FirebaseFirestore fb = FirebaseFirestore.instance;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -62,5 +59,9 @@ class _AppyState extends State<Appy> {
         ),
       ),
     );
+  }
+
+  Future<QuerySnapshot<Map<String, dynamic>>> getImages() {
+    return fb.collection("images").get();
   }
 }
