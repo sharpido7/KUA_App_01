@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
+import 'dart:io';
 
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/services.dart';
 import 'package:kua_app_01/storage_service.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -99,6 +102,40 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                     );
                   }),
+              Builder(builder: (context) {
+                return ElevatedButton(
+                    child: Text("Save Images"),
+                    onPressed: () {
+                      setState(() {
+                        this.isLoading = true;
+                      });
+                      listOfStr.forEach((img) async {
+                        String imageName = img!.substring(img.lastIndexOf("/"), img.lastIndexOf(".")).replaceAll("/", "");
+
+                        final Directory systemTempDir = Directory.systemTemp;
+                        final byteData = await rootBundle.load(img);
+
+                        final file = File('${systemTempDir.path}/$imageName.jpeg');
+                        await file.writeAsBytes(byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
+                        TaskSnapshot snapshot = await storage.ref().child("images/$imageName").putFile(file);
+                        if (snapshot.state == TaskState.success) {
+                          final String downloadUrl = await snapshot.ref.getDownloadURL();
+                          await FirebaseFirestore.instance.collection("images").add({
+                            "url": downloadUrl,
+                            "name": imageName
+                          });
+                          setState(() {
+                            isLoading = false;
+                          });
+                          final snackBar = SnackBar(content: Text('Yay! Success'));
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        } else {
+                          print('Error from image repo ${snapshot.state.toString()}');
+                          throw ('This file is not an image');
+                        }
+                      });
+                    });
+              }),
             ],
           ),
         ),
