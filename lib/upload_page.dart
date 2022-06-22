@@ -38,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(children: [
         Center(
           child: ElevatedButton(
+            style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.orange)),
             onPressed: () async {
               final results = await FilePicker.platform.pickFiles(
                 allowMultiple: false,
