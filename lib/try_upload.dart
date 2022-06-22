@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/services.dart';
+import 'package:kua_app_01/profile_page.dart';
 import 'package:kua_app_01/storage_service.dart';
 import 'package:kua_app_01/try_retrieve.dart';
 
@@ -142,10 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => Builder(builder: (context) {
-                              return SecondPage();
-                            })),
+                    MaterialPageRoute(builder: (context) => ProfilePage()),
                   );
                 },
               ),
