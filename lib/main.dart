@@ -4,13 +4,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:kua_app_01/new_homepage.dart';
 import 'package:kua_app_01/try_upload.dart';
 import 'package:kua_app_01/try_retrieve.dart';
+import 'package:kua_app_01/upload_page.dart';
 // import 'firebase_options.dart';
 //import 'package:pinput/pinput.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const SecondPage());
+  runApp(const UploadPage());
 }
 
 class MyApp extends StatelessWidget {
