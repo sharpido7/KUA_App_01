@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final Storage storage2 = Storage();
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(title: Text(' Uplaod to Cloud Storage')),
       body: Column(children: [
         Center(
