@@ -5,13 +5,14 @@ import 'package:kua_app_01/new_homepage.dart';
 import 'package:kua_app_01/try_upload.dart';
 import 'package:kua_app_01/try_retrieve.dart';
 import 'package:kua_app_01/upload_page.dart';
+import 'package:kua_app_01/hope.dart';
 // import 'firebase_options.dart';
 //import 'package:pinput/pinput.dart';
 
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(UploadPage());
+  runApp(Hope());
 }
 
 class MyApp extends StatelessWidget {
