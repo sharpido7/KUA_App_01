@@ -66,39 +66,41 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            GestureDetector(
-              onTap: () {
-                pickUploadProfilePic();
-              },
-              child: Container(
-                margin: const EdgeInsets.only(top: 80, bottom: 24),
-                height: 120,
-                width: 120,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: primary,
-                ),
-                child: Center(
-                  child: profilePicLink == " "
-                      ? const Icon(
-                          Icons.person,
-                          color: Colors.white,
-                          size: 80,
-                        )
-                      : ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.network(profilePicLink),
-                        ),
+    return MaterialApp(
+      home: Scaffold(
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  pickUploadProfilePic();
+                },
+                child: Container(
+                  margin: const EdgeInsets.only(top: 80, bottom: 24),
+                  height: 120,
+                  width: 120,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: primary,
+                  ),
+                  child: Center(
+                    child: profilePicLink == " "
+                        ? const Icon(
+                            Icons.person,
+                            color: Colors.white,
+                            size: 80,
+                          )
+                        : ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.network(profilePicLink),
+                          ),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
