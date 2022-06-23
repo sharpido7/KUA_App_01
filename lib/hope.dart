@@ -40,8 +40,11 @@ class _HopeState extends State<Hope> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Course Upload Page',
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Course Upload Page"),
+          backgroundColor: Colors.black38,
+        ),
         backgroundColor: Colors.black,
         body: Container(
           padding: EdgeInsets.all(40.0),
