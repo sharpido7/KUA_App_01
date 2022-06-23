@@ -33,7 +33,7 @@ class _HopeState extends State<Hope> {
                     "category": category.text,
                     "title": title.text,
                   };
-                  FirebaseFirestore.instance.collection('test').add(data);
+                  FirebaseFirestore.instance.collection('Course').add(data);
                 },
                 child: Text('Submit'),
                 color: Colors.orange,
