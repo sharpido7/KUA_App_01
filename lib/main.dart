@@ -10,7 +10,7 @@ import 'package:kua_app_01/upload_image.dart';
 main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(ImageUpload());
+  runApp(ProfileScreen());
 }
 
 class MyApp extends StatelessWidget {
