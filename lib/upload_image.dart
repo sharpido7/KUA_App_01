@@ -214,7 +214,8 @@ class _AddImageState extends State<AddImage> {
   final picker = ImagePicker();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+      home: Scaffold(
         appBar: AppBar(
           title: Text('Add Image'),
           actions: [
@@ -271,7 +272,9 @@ class _AddImageState extends State<AddImage> {
                   ))
                 : Container(),
           ],
-        ));
+        ),
+      ),
+    );
   }
 
   chooseImage() async {
