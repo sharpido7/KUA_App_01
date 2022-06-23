@@ -43,7 +43,7 @@ class _HopeState extends State<Hope> {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Course Upload Page"),
-          backgroundColor: Colors.black38,
+          backgroundColor: Colors.orange,
         ),
         backgroundColor: Colors.black,
         body: Container(
