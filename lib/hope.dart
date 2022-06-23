@@ -12,6 +12,7 @@ class _HopeState extends State<Hope> {
   TextEditingController author = new TextEditingController();
   TextEditingController category = new TextEditingController();
   TextEditingController title = new TextEditingController();
+  TextEditingController sampledata1 = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +23,29 @@ class _HopeState extends State<Hope> {
           padding: EdgeInsets.all(40.0),
           child: Center(
             child: Column(children: [
-              TextFormField(controller: author, decoration: InputDecoration(hintText: 'Author')),
+              TextFormField(
+                  controller: author,
+                  decoration: InputDecoration(
+                    hintText: 'Author',
+                  )),
               TextFormField(controller: category, decoration: InputDecoration(hintText: 'Category')),
               TextFormField(controller: title, decoration: InputDecoration(hintText: 'title')),
-              //TextFormField(controller: sampledata1, decoration: InputDecoration(hintText: 'sample data')),
+              TextFormField(
+                controller: sampledata1,
+                decoration: InputDecoration(
+                  fillColor: Colors.black.withOpacity(0.6),
+                  filled: true,
+                  border: new OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(8.0),
+                    ),
+                    borderSide: new BorderSide(
+                      color: Colors.transparent,
+                      width: 1.0,
+                    ),
+                  ),
+                ),
+              ),
               //TextFormField(controller: sampledata1, decoration: InputDecoration(hintText: 'sample data')),
               FlatButton(
                 onPressed: () {
