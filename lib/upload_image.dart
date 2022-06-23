@@ -70,36 +70,40 @@ class _ProfileScreenState extends State<ProfileScreen> {
       home: Scaffold(
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  pickUploadProfilePic();
-                },
-                child: Container(
-                  margin: const EdgeInsets.only(top: 80, bottom: 24),
-                  height: 120,
-                  width: 120,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: primary,
-                  ),
-                  child: Center(
-                    child: profilePicLink == " "
-                        ? const Icon(
-                            Icons.person,
-                            color: Colors.white,
-                            size: 80,
-                          )
-                        : ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.network(profilePicLink),
-                          ),
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * 0.4,
+            child: Column(
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    pickUploadProfilePic();
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 80, bottom: 24),
+                    height: 120,
+                    width: 120,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: primary,
+                    ),
+                    child: Center(
+                      child: profilePicLink == " "
+                          ? const Icon(
+                              Icons.person,
+                              color: Colors.white,
+                              size: 80,
+                            )
+                          : ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(profilePicLink),
+                            ),
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -107,76 +111,80 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }
 }
 
-class ProlifeScren extends StatefulWidget {
-  const ProlifeScren({Key? key}) : super(key: key);
-  _ProlifeScrenState createState() => _ProlifeScrenState();
-}
+// class ProlifeScren extends StatefulWidget {
+//   const ProlifeScren({Key? key}) : super(key: key);
+//   _ProlifeScrenState createState() => _ProlifeScrenState();
+// }
 
-class _ProlifeScrenState extends State<ProlifeScren> {
-  double screenHeight = 0;
-  double screenWidth = 0;
-  Color primary = const Color(0xffeef444c);
-  String profilePicLink = "";
+// class _ProlifeScrenState extends State<ProlifeScren> {
 
-  void pickUploadProfilePic() async {
-    final image = await ImagePicker().pickImage(
-      source: ImageSource.gallery,
-      maxHeight: 512,
-      maxWidth: 512,
-      imageQuality: 90,
-    );
+//   double screenHeight = 0;
+//   double screenWidth = 0;
+//   Color primary = const Color(0xffeef444c);
+//   String profilePicLink = "";
 
-    Reference ref = FirebaseStorage.instance.ref().child("profilepic.jpg");
+//   void pickUploadProfilePic() async {
+//     final image = await ImagePicker().pickImage(
+//       source: ImageSource.gallery,
+//       maxHeight: 512,
+//       maxWidth: 512,
+//       imageQuality: 90,
+//     );
 
-    await ref.putFile(File(image!.path));
+//     Reference ref = FirebaseStorage.instance.ref().child("profilepic.jpg");
 
-    ref.getDownloadURL().then((value) async {
-      setState(() {
-        profilePicLink = value;
-      });
-    });
-  }
+//     await ref.putFile(File(image!.path));
 
-  @override
-  Widget build(BuildContext context) {
-    screenHeight = MediaQuery.of(context).size.height;
-    screenWidth = MediaQuery.of(context).size.width;
-    return MaterialApp(
-        home: Scaffold(
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            GestureDetector(
-              onTap: () {
-                pickUploadProfilePic();
-              },
-              child: Container(
-                margin: const EdgeInsets.only(top: 80, bottom: 24),
-                height: 120,
-                width: 120,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: primary,
-                ),
-                child: Center(
-                  child: profilePicLink == " "
-                      ? const Icon(
-                          Icons.person,
-                          color: Colors.white,
-                          size: 80,
-                        )
-                      : ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.network(profilePicLink),
-                        ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ));
-  }
-}
+//     ref.getDownloadURL().then((value) async {
+//       setState(() {
+//         profilePicLink = value;
+//       });
+//     });
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     screenHeight = MediaQuery.of(context).size.height;
+//     screenWidth = MediaQuery.of(context).size.width;
+//     return Widget testWidget = new MediaQuery(
+//       data: new MediaQueryData(),
+//       child: new MaterialApp(home: new Scaffold(
+//         body: SingleChildScrollView(
+//           padding: const EdgeInsets.all(20),
+//           child: Column(
+//             children: [
+//               GestureDetector(
+//                 onTap: () {
+//                   pickUploadProfilePic();
+//                 },
+//                 child: Container(
+//                   margin: const EdgeInsets.only(top: 80, bottom: 24),
+//                   height: 120,
+//                   width: 120,
+//                   alignment: Alignment.center,
+//                   decoration: BoxDecoration(
+//                     borderRadius: BorderRadius.circular(20),
+//                     color: primary,
+//                   ),
+//                   child: Center(
+//                     child: profilePicLink == " "
+//                         ? const Icon(
+//                             Icons.person,
+//                             color: Colors.white,
+//                             size: 80,
+//                           )
+//                         : ClipRRect(
+//                             borderRadius: BorderRadius.circular(20),
+//                             child: Image.network(profilePicLink),
+//                           ),
+//                   ),
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       )
+//       ),
+//     );
+//   }
+// }
