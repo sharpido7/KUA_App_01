@@ -33,7 +33,7 @@ class _HopeState extends State<Hope> {
               TextFormField(
                 controller: sampledata1,
                 decoration: InputDecoration(
-                  fillColor: Colors.black.withOpacity(0.6),
+                  fillColor: Colors.white.withOpacity(0.6),
                   filled: true,
                   border: new OutlineInputBorder(
                     borderRadius: const BorderRadius.all(
