@@ -8,6 +8,26 @@ class Hope extends StatefulWidget {
   _HopeState createState() => _HopeState();
 }
 
+Widget Field(textconroller) {
+  return TextFormField(
+    controller: textconroller,
+    decoration: InputDecoration(
+      hintText: 'Category',
+      fillColor: Colors.white.withOpacity(0.6),
+      filled: true,
+      border: new OutlineInputBorder(
+        borderRadius: const BorderRadius.all(
+          const Radius.circular(8.0),
+        ),
+        borderSide: new BorderSide(
+          color: Colors.transparent,
+          width: 1.0,
+        ),
+      ),
+    ),
+  );
+}
+
 class _HopeState extends State<Hope> {
   TextEditingController author = new TextEditingController();
   TextEditingController category = new TextEditingController();
@@ -30,6 +50,7 @@ class _HopeState extends State<Hope> {
                   )),
               TextFormField(controller: category, decoration: InputDecoration(hintText: 'Category')),
               TextFormField(controller: title, decoration: InputDecoration(hintText: 'title')),
+              Field(category),
               TextFormField(
                 controller: sampledata1,
                 decoration: InputDecoration(
