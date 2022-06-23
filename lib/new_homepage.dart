@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'list.dart';
 import 'package:kua_app_01/lesson_page.dart';
 import 'package:kua_app_01/profile_page.dart';
-import 'package:kua_app_01/upload_page.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

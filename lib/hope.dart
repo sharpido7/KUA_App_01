@@ -17,6 +17,7 @@ class _HopeState extends State<Hope> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: Container(
           padding: EdgeInsets.all(40.0),
           child: Center(
