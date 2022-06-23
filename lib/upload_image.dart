@@ -106,3 +106,51 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
+
+class ProlifeScren extends StatefulWidget {
+  const ProlifeScren({Key? key}) : super(key: key);
+  _ProlifeScrenState createState() => _ProlifeScrenState();
+}
+
+class _ProlifeScrenState extends State<ProlifeScren> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        home: Scaffold(
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            GestureDetector(
+              onTap: () {
+                pickUploadProfilePic();
+              },
+              child: Container(
+                margin: const EdgeInsets.only(top: 80, bottom: 24),
+                height: 120,
+                width: 120,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: primary,
+                ),
+                child: Center(
+                  child: profilePicLink == " "
+                      ? const Icon(
+                          Icons.person,
+                          color: Colors.white,
+                          size: 80,
+                        )
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.network(profilePicLink),
+                        ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ));
+  }
+}
