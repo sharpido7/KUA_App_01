@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-class Hope extends StatefulWidget {
-  const Hope({Key? key}) : super(key: key);
-  _HopeState createState() => _HopeState();
+class CourseUpload extends StatefulWidget {
+  const CourseUpload({Key? key}) : super(key: key);
+  _CourseUploadState createState() => _CourseUploadState();
 }
 
 Widget Field(textconroller, hintText) {
@@ -31,7 +31,7 @@ Widget Field(textconroller, hintText) {
   );
 }
 
-class _HopeState extends State<Hope> {
+class _CourseUploadState extends State<CourseUpload> {
   TextEditingController author = new TextEditingController();
   TextEditingController category = new TextEditingController();
   TextEditingController title = new TextEditingController();
