@@ -44,6 +44,12 @@ class _HopeState extends State<Hope> {
         appBar: AppBar(
           title: Text("Course Upload Page"),
           backgroundColor: Colors.orange,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {
+              Navigator.pushNamed(context, '/');
+            },
+          ),
         ),
         backgroundColor: Colors.black,
         body: Container(
