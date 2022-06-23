@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'list.dart';
 import 'package:kua_app_01/lesson_page.dart';
 import 'package:kua_app_01/profile_page.dart';
+import 'package:kua_app_01/hope.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _HomeScreenWidgetState extends State<HomeScreenWidget> {
       Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
     }
     if (index == 1) {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Hope()));
     }
     setState(() {
       _selectedIndex = index;
