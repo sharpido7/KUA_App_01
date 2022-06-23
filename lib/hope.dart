@@ -9,19 +9,22 @@ class Hope extends StatefulWidget {
 }
 
 Widget Field(textconroller, hintText) {
-  return TextFormField(
-    controller: textconroller,
-    decoration: InputDecoration(
-      hintText: '$hintText',
-      fillColor: Colors.white.withOpacity(0.6),
-      filled: true,
-      border: new OutlineInputBorder(
-        borderRadius: const BorderRadius.all(
-          const Radius.circular(8.0),
-        ),
-        borderSide: new BorderSide(
-          color: Colors.transparent,
-          width: 1.0,
+  return Padding(
+    padding: EdgeInsets.all(8.0),
+    child: TextFormField(
+      controller: textconroller,
+      decoration: InputDecoration(
+        hintText: '$hintText',
+        fillColor: Colors.white.withOpacity(0.6),
+        filled: true,
+        border: new OutlineInputBorder(
+          borderRadius: const BorderRadius.all(
+            const Radius.circular(8.0),
+          ),
+          borderSide: new BorderSide(
+            color: Colors.transparent,
+            width: 1.0,
+          ),
         ),
       ),
     ),
