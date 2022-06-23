@@ -8,11 +8,11 @@ class Hope extends StatefulWidget {
   _HopeState createState() => _HopeState();
 }
 
-Widget Field(textconroller) {
+Widget Field(textconroller, hintText) {
   return TextFormField(
     controller: textconroller,
     decoration: InputDecoration(
-      hintText: 'Category',
+      hintText: '$hintText',
       fillColor: Colors.white.withOpacity(0.6),
       filled: true,
       border: new OutlineInputBorder(
@@ -43,9 +43,9 @@ class _HopeState extends State<Hope> {
           padding: EdgeInsets.all(40.0),
           child: Center(
             child: Column(children: [
-              Field(author),
-              Field(category),
-              Field(title),
+              Field(author, 'Author'),
+              Field(category, 'Category'),
+              Field(title, 'Course Title'),
 
               //TextFormField(controller: sampledata1, decoration: InputDecoration(hintText: 'sample data')),
               FlatButton(
