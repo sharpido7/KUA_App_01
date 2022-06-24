@@ -43,6 +43,12 @@ class _UpState extends State<Up> {
     final _picker = ImagePicker();
     PickedFile image;
 
+    @override
+    void initState() {
+      imageUrl = "url";
+      super.initState();
+    }
+
     //Check Permissions
     await Permission.photos.request();
 
