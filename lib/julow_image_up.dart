@@ -13,6 +13,12 @@ class _UpState extends State<Up> {
   late String imageUrl;
 
   @override
+  void initState() {
+    imageUrl = "url";
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
