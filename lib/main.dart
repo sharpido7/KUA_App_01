@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kua_app_01/julow_image_up.dart';
+import 'package:kua_app_01/new_image_upload_page.dart';
 import 'package:kua_app_01/registration.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:kua_app_01/new_homepage.dart';
