@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:image_picker/image_picker.dart';
@@ -41,6 +42,7 @@ class _UpState extends State<Up> {
   uploadImage() async {
     final _storage = FirebaseStorage.instance;
     final _picker = ImagePicker();
+
     PickedFile image;
 
     @override
@@ -58,6 +60,7 @@ class _UpState extends State<Up> {
       //Select Image
       image = (await _picker.getImage(source: ImageSource.gallery))!;
       var file = File(image.path);
+      var _file = File(image.path);
 
       if (image != null) {
         //Upload to Firebase
@@ -68,6 +71,18 @@ class _UpState extends State<Up> {
         setState(() {
           imageUrl = downloadUrl;
         });
+      } else if (kIsWeb) {
+        final ImagePicker _picker = ImagePicker();
+        XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+        if (image != null) {
+          var f = await image.readAsBytes();
+          setState(() {
+            _file = File("a");
+            var webImage = f;
+          });
+        } else {
+          print("No web file selected");
+        }
       } else {
         print('No Path Received');
       }
