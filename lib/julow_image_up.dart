@@ -13,6 +13,12 @@ class _UpState extends State<Up> {
   late String imageUrl;
 
   @override
+  void initState() {
+    imageUrl = "url";
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
@@ -36,6 +42,7 @@ class _UpState extends State<Up> {
     final _storage = FirebaseStorage.instance;
     final _picker = ImagePicker();
     PickedFile image;
+
     //Check Permissions
     await Permission.photos.request();
 
